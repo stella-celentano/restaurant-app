@@ -1,0 +1,9 @@
+<app-loading *ngIf="!Restaurants"></app-loading>
+<div *ngIf="Restaurants" class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="100%" fxFlex.sm="100%" fxFlex.sm="100%">
+        <button mat-flat-button color="primary" (click)="openNewRestaurantModal()">Adicionar Restaurante</button>
+    </div>
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let filme of Filmes">
+        <app-restaurant-card [Filme]="filme"></app-restaurant-card>
+    </div>
+</div>
