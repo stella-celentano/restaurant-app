@@ -118,7 +118,6 @@ export class NewRestaurantComponent implements OnInit {
       this.toastr.showToastrSuccess(`O restaurante ${response.body['data']['name']} foi adicionado com sucesso`)
       this.dialogRef.close(true)
     }, err => {
-      console.log(this.restaurantFormGroup.value)
       this.toastr.showToastrError(`${err.error['message']}`)
       this.dialogRef.close(false)
     })
