@@ -5,6 +5,6 @@ export interface Chef {
     name: String,
     city: String,
     education?: String,
-    imagems: String,
+    imagem: String,
     restaurant: Restaurant
 }

@@ -9,3 +9,7 @@ welcome {
 .welcome-content {
     text-align: center;
 }
+
+.btn {
+    margin-left: 30px;
+}

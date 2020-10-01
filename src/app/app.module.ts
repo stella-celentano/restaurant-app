@@ -1,33 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from "@angular/common/http"
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt'
 
 import { ToastrModule } from "ngx-toastr"
 
 import { NavigationModule } from "./modules/navigation/navigation.module"
 import { AppRoutingModule } from "./app-routing.module"
 import { AppComponent } from './app.component';
-import { ErrorComponent } from './components/error/error.component';
-import { LoadingComponent } from './components/loading/loading.component';
-import { ChefsComponent } from './modules/chefs/chefs.component';
+import { ErrorInterceptor } from './core/helpers/error.interceptor'
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ErrorComponent,
-    LoadingComponent,
-    ChefsComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     NavigationModule,
-    AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

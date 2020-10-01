@@ -1,1 +1,18 @@
-<p>restaurant-card works!</p>
+<mat-card class="mat-elevation-z4">
+    <mat-card-header>
+        <img mat-card-avatar class="restaurant-image" [src]="Restaurant.imagem" onerror="this.src='./../../../../assets/restaurant.png'">
+        <mat-card-title>{{Restaurant.name}}</mat-card-title>
+        <mat-card-subtitle>{{Restaurant.typeFood}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [routerLink]="['/restaurants/detail/', Restaurant.name]" class="restaurantPoster-image routerLinkRestaurant"
+        [src]="Restaurant.imagem" alt="Image of a {{Restaurant.name}}">
+    <mat-card-content>
+        <span [routerLink]="['/restaurants/detail/', Restaurant.name]" class="mat-h2 routerLinkRestaurant">{{Restaurant.name}}</span>
+        <p>
+            {{Restaurant.contact}}
+        </p>
+        <p>
+            {{Restaurant.city}},  {{Restaurant.address}}
+        </p>
+    </mat-card-content>
+</mat-card>

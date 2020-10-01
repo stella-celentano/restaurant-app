@@ -7,5 +7,6 @@ export interface Restaurant {
     city: String,
     address: String,
     typeFood?: String,
-    chefs: Chef[]
+    imagem: String,
+    chef: Chef
 }

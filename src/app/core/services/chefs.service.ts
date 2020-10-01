@@ -11,15 +11,15 @@ export class ChefsService {
 
   constructor(private http: HttpClient) { }
 
-  findAllRestaurants(): Observable<HttpResponse<Chef[]>> {
+  findAllChefs(): Observable<HttpResponse<Chef[]>> {
     return this.http.get<Chef[]>(`${API_URL}/chef/getAllChefs`, { observe: 'response' })
   }
 
-  findMovieByName(chefName: String): Observable<HttpResponse<Chef>> {
+  findChefByName(chefName: String): Observable<HttpResponse<Chef>> {
     return this.http.get<Chef>(`${API_URL}/chef/getOne/${chefName}`, { observe: 'response' })
   }
 
-  createNewMovie(body: Chef): Observable<HttpResponse<Chef>> {
+  createNewChef(body: Chef): Observable<HttpResponse<Chef>> {
     return this.http.post<Chef>(`${API_URL}/chef/createChef`, body, { observe: 'response' })
   }
 

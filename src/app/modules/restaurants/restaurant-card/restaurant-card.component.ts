@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Restaurant } from './../../../core/models/restaurant.model'
 
 @Component({
@@ -8,13 +8,11 @@ import { Restaurant } from './../../../core/models/restaurant.model'
 })
 export class RestaurantCardComponent implements OnInit {
 
+  @Input() Restaurant: Restaurant
+  
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  sliceSinopses(value: String): String {
-    return `${value.slice(0, 100)}...`
   }
 
 }

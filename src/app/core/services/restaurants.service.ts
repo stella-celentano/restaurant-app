@@ -15,11 +15,11 @@ export class RestaurantsService {
     return this.http.get<Restaurant[]>(`${API_URL}/restaurant/getAllRestaurants`, { observe: 'response' })
   }
 
-  findMovieByName(restaurantName: String): Observable<HttpResponse<Restaurant>> {
+  findRestaurantByName(restaurantName: String): Observable<HttpResponse<Restaurant>> {
     return this.http.get<Restaurant>(`${API_URL}/restaurant/getOne/${restaurantName}`, { observe: 'response' })
   }
 
-  createNewMovie(body: Restaurant): Observable<HttpResponse<Restaurant>> {
+  createNewRestaurant(body: Restaurant): Observable<HttpResponse<Restaurant>> {
     return this.http.post<Restaurant>(`${API_URL}/restaurant/createRestaurant`, body, { observe: 'response' })
   }
 

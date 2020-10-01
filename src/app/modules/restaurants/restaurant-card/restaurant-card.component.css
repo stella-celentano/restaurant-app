@@ -1,0 +1,19 @@
+.restaurant-image {
+    background-size: cover;
+}
+
+.restaurantPoster-image {
+    height: 400px;
+}
+
+.content>mat-card {
+    width: 200px;
+}
+
+.routerLinkRestaurant {
+    cursor: pointer;
+}
+
+.routerLinkRestaurant:hover {
+    text-decoration: underline;
+}
