@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Chef } from 'src/app/core/models/chef.model';
 
 @Component({
   selector: 'app-chef-card',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chef-card.component.css']
 })
 export class ChefCardComponent implements OnInit {
+
+  @Input() Chef: Chef
 
   constructor() { }
 

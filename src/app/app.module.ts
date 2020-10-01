@@ -12,6 +12,8 @@ import { AppRoutingModule } from "./app-routing.module"
 import { AppComponent } from './app.component';
 import { ErrorInterceptor } from './core/helpers/error.interceptor'
 
+registerLocaleData(localePt, 'pt-BR')
+
 @NgModule({
   declarations: [
     AppComponent

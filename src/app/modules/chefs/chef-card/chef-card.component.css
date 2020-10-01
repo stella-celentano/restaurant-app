@@ -1,0 +1,19 @@
+.Chef-image {
+    background-size: cover;
+}
+
+.ChefPoster-image {
+    height: 400px;
+}
+
+.content>mat-card {
+    width: 200px;
+}
+
+.routerLinkChef {
+    cursor: pointer;
+}
+
+.routerLinkChef:hover {
+    text-decoration: underline;
+}

@@ -1,1 +1,30 @@
-<p>chef-detail works!</p>
+<app-loading *ngIf="!Chef && !hasError"></app-loading>
+<app-error *ngIf="!Chef && hasError"></app-error>
+<div *ngIf="Chef && !hasError" class="content" fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="start center"
+    fxLayoutAlign.gt-sm="center start" fxLayoutGap="16px">
+    <div fxFlex="50%" fxFlex.gt-sm="25%">
+        <mat-card class="mat-elevation-z0">
+            <img mat-card-image class="ChefCover" [src]="Chef.imagem" alt="Photo of a {{Chef.name}}">
+        </mat-card>
+        <mat-card class="mat-elevation-z3">
+            <mat-card-header>
+                <img mat-card-avatar class="restaurantImage" [src]="Chef.restaurant.imagem"
+                    onerror="this.src='./../../../../assets/restaurant.png'" alt="Photo of a {{Chef.restaurant.name}}">
+                <div class="restaurantName">{{Chef.restaurant.name}}</div>
+            </mat-card-header>
+        </mat-card>
+    </div>
+    <div fxFlex="50%" fxFlex.gt-sm="75%">
+        <mat-card class="mat-elevation-z0">
+            <div class="row">
+                <span class="mat-display-1 uppercase-text">{{Chef.name}}</span>
+                <br>
+                <span class="ChefInfo">{{Chef.city}}</span>
+                <br>
+                <br>
+                <span *ngIf="Chef.education" class="ChefInfo">{{Chef.education}}</span>
+                <br>
+            </div>
+        </mat-card>
+    </div>
+</div>

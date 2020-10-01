@@ -1,1 +1,9 @@
-<p>chefs works!</p>
+<app-loading *ngIf="!Chefs"></app-loading>
+<div *ngIf="Chefs" class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="100%" fxFlex.sm="100%" fxFlex.sm="100%">
+        <button mat-flat-button color="primary" (click)="openNewChefModal()">Adicionar Chef</button>
+    </div>
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let chef of Chefs">
+        <app-chef-card [Chef]="chef"></app-chef-card>
+    </div>
+</div>

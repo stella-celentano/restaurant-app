@@ -1,0 +1,27 @@
+.content {
+    padding: 10px;
+}
+
+.ChefCover {
+    height: 400px;
+    max-width: 400px;
+}
+
+.restaurantImage {
+    background-size: cover;
+}
+
+.restaurantName {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: -20px;
+}
+
+.uppercase-text {
+    text-transform: uppercase;
+}
+
+.ChefInfo {
+    font-size: 14px;
+    color: rgb(120,120,120);
+}
