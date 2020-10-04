@@ -1,80 +1,36 @@
-<h2 mat-dialog-title>Adiciona um restaurante</h2>
-<mat-horizontal-stepper linear="true" #stepper>
-    <mat-step [stepControl]="chefFormGroup" editable="false">
-        <ng-template matStepLabel>{{stepRestaurantLabel}}</ng-template>
-        <form *ngIf="!isNewChef" [formGroup]="chefFormGroup" class="form">
-            <mat-form-field class="form-element">
-                <mat-label>Selecione um chef</mat-label>
-                <mat-select formControlName="chef" required>
-                    <mat-option *ngFor="let chef of chefs" [value]="chef">{{chef.name}}</mat-option>
-                </mat-select>
-                <mat-hint class="select-chef" (click)="newChef()">Não encontrou o chef desejado? Adicione um
-                    agora.</mat-hint>
-            </mat-form-field>
-        </form>
-        <form *ngIf="isNewChef" [formGroup]="chefFormGroup" class="form">
-            <div class="form-element">
-                <span class="select-chef" (click)="selectChef()">Quero voltar e escolher um chef</span>
-            </div>
-            <mat-form-field class="form-element">
-                <mat-label>Nome</mat-label>
-                <input matInput formControlName="name" placeholder="Nome" required>
-                <mat-error *ngIf="chefNameExists()">Já existe um chef cadastrado com esse nome</mat-error>
-            </mat-form-field>
-            <mat-form-field class="form-element">
-                <mat-label>Cidade</mat-label>
-                <input matInput formControlName="city" placeholder="Cidade" required>
-            </mat-form-field>
-             <mat-form-field class="form-element">
-                <mat-label>Escola de Gastronomia</mat-label>
-                <input matInput formControlName="education" placeholder="Escola de Gastronomia" required>
-            </mat-form-field>
-            <mat-form-field class="form-element">
-                <mat-label>Imagem</mat-label>
-                <input matInput formControlName="imagem" placeholder="Link da imagem">
-            </mat-form-field>
-        </form>
-        <div class="form-element">
-            <button class="button" color="primary" mat-button (click)="nextStep()" matStepperNext
-                [disabled]="chefFormGroup.invalid">Próximo
-            </button>
-        </div>
-    </mat-step>
-    <mat-step [stepControl]="restaurantFormGroup" editable="false">
-        <form [formGroup]="restaurantFormGroup" class="form">
-            <ng-template matStepLabel>Restaurante</ng-template>
-            <mat-form-field class="form-element">
-                <mat-label>Nome</mat-label>
-                <input matInput formControlName="name" placeholder="Nome" required>
-                <mat-error *ngIf="restaurantNameExists()">Já existe um restaurante cadastrado com esse nome</mat-error>
-            </mat-form-field>
-            <mat-form-field class="form-element">
-                <mat-label>Contato</mat-label>
-                <input matInput formControlName="contact" placeholder="Contato" required>
-            </mat-form-field>
-            <mat-form-field class="form-element">
-                <mat-label>Cidade</mat-label>
-                <input matInput formControlName="city" placeholder="Cidade" required>
-            </mat-form-field>
-            <mat-form-field class="form-element">
-                <mat-label>Endereço</mat-label>
-                <input matInput formControlName="address" placeholder="Endereço" required>
-            </mat-form-field>
-            <mat-form-field class="form-element">
-                <mat-label>Tipo de Comida</mat-label>
-                <input matInput formControlName="typeFood" placeholder="Tipo de Comida">
-            </mat-form-field>
-            <mat-form-field class="form-element">
-                <mat-label>Imagem</mat-label>
-                <input matInput formControlName="imagem" placeholder="Link da Imagem">
-            </mat-form-field>
-            <div class="form-element">
-                <button class="button" color="primary" mat-button [disabled]="restaurantFormGroup.invalid"
-                    (click)="createNewRestaurant()">Adicionar Restaurante</button>
-            </div>
-        </form>
-    </mat-step>
-</mat-horizontal-stepper>
+<h2 mat-dialog-title>Adicionar um restaurante</h2>
+<form [formGroup]="restaurantFormGroup" class="form">
+    <ng-template matStepLabel>Restaurante</ng-template>
+    <mat-form-field class="form-element">
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="name" placeholder="Nome" required>
+        <mat-error *ngIf="restaurantNameExists()">Já existe um restaurante cadastrado com esse nome</mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-element">
+        <mat-label>Contato</mat-label>
+        <input matInput formControlName="contact" placeholder="Contato" required>
+    </mat-form-field>
+    <mat-form-field class="form-element">
+        <mat-label>Cidade</mat-label>
+        <input matInput formControlName="city" placeholder="Cidade" required>
+    </mat-form-field>
+    <mat-form-field class="form-element">
+        <mat-label>Endereço</mat-label>
+        <input matInput formControlName="address" placeholder="Endereço" required>
+    </mat-form-field>
+    <mat-form-field class="form-element">
+        <mat-label>Tipo de Comida</mat-label>
+        <input matInput formControlName="typeFood" placeholder="Tipo de Comida">
+    </mat-form-field>
+    <mat-form-field class="form-element">
+        <mat-label>Imagem</mat-label>
+        <input matInput formControlName="imagem" placeholder="Link da Imagem">
+    </mat-form-field>
+    <div class="form-element">
+        <button class="button" color="primary" mat-button [disabled]="restaurantFormGroup.invalid"
+            (click)="createNewRestaurant()">Adicionar Restaurante</button>
+    </div>
+</form>
 <div class="form-element">
     <button mat-button class="button" color="warn" (click)="closeDialog()">Fechar</button>
 </div>

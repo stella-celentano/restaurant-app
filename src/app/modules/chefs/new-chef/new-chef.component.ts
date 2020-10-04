@@ -21,7 +21,7 @@ export class NewChefComponent implements OnInit {
 
   restaurantFormGroup: FormGroup
   isNewRestaurant: boolean = false
-  restaurant: Restaurant
+  restaurants: Restaurant[]
   stepChefLabel: String = 'Restaurante'
   chefFormGroup: FormGroup
 
@@ -49,7 +49,7 @@ export class NewChefComponent implements OnInit {
 
   findAllRestaurants(): void {
     this.httpRequest = this.restaurantsService.findAllRestaurants().subscribe(response => {
-      this.restaurant = response.body['data']
+      this.restaurants = response.body['data']
     }, err => {
       console.log(err.error['message'])
     })

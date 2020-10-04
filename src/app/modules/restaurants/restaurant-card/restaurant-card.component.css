@@ -10,10 +10,10 @@
     width: 200px;
 }
 
-.routerLinkRestaurant {
+.routerLinkClass {
     cursor: pointer;
 }
 
-.routerLinkRestaurant:hover {
+.routerLinkClass:hover {
     text-decoration: underline;
 }

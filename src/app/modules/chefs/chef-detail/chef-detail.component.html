@@ -7,7 +7,7 @@
             <img mat-card-image class="ChefCover" [src]="Chef.imagem" alt="Photo of a {{Chef.name}}">
         </mat-card>
         <mat-card class="mat-elevation-z3">
-            <mat-card-header>
+            <mat-card-header [routerLink]="['/restaurants/detail/', Chef.restaurant.name]" class="routerLinkClass">
                 <img mat-card-avatar class="restaurantImage" [src]="Chef.restaurant.imagem"
                     onerror="this.src='./../../../../assets/restaurant.png'" alt="Photo of a {{Chef.restaurant.name}}">
                 <div class="restaurantName">{{Chef.restaurant.name}}</div>

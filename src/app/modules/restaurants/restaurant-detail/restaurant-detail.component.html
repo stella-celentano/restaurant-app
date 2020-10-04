@@ -6,11 +6,11 @@
         <mat-card class="mat-elevation-z0">
             <img mat-card-image class="restaurantCover" [src]="Restaurant.imagem" alt="Photo of a {{Restaurant.name}}">
         </mat-card>
-        <mat-card class="mat-elevation-z3">
-            <mat-card-header>
-                <img mat-card-avatar class="chefImage" [src]="Restaurant.chef.imagem"
-                    onerror="this.src='./../../../../assets/chef.png'" alt="Photo of a {{Restaurant.chef.name}}">
-                <div class="chefName">{{Restaurant.chef.name}}</div>
+        <mat-card class="mat-elevation-z3 marginChef" *ngFor="let chefs of Restaurant.chef">
+            <mat-card-header [routerLink]="['/chefs/detail/', chefs.name]" class="routerLinkClass">
+                <img mat-card-avatar class="chefImage" [src]="chefs.imagem"
+                    onerror="this.src='./../../../../assets/chef.png'" alt="Photo of a {{chefs.name}}">
+                <div class="chefName">{{chefs.name}}</div>
             </mat-card-header>
         </mat-card>
     </div>

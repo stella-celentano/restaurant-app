@@ -25,3 +25,11 @@
     font-size: 14px;
     color: rgb(120,120,120);
 }
+
+.routerLinkClass {
+    cursor: pointer;
+}
+
+.routerLinkClass:hover {
+    text-decoration: underline;
+}

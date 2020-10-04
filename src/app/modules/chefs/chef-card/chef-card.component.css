@@ -10,10 +10,10 @@
     width: 200px;
 }
 
-.routerLinkChef {
+.routerLinkClass {
     cursor: pointer;
 }
 
-.routerLinkChef:hover {
+.routerLinkClass:hover {
     text-decoration: underline;
 }
