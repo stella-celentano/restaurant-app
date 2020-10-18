@@ -11,6 +11,7 @@ import { MatStepperModule } from "@angular/material/stepper"
 import { MatFormFieldModule } from "@angular/material/form-field"
 import { MatInputModule } from "@angular/material/input"
 import { MatSelectModule } from "@angular/material/select"
+import { MatIconModule } from "@angular/material/icon";
 
 import { ChefsRoutingModule } from './chefs-routing.module';
 import { ChefsComponent } from './chefs.component';
@@ -18,13 +19,14 @@ import { ComponentsModule } from "./../../components/components.module";
 import { NewChefComponent } from './new-chef/new-chef.component';
 import { ChefCardComponent } from './chef-card/chef-card.component';
 import { ChefDetailComponent } from './chef-detail/chef-detail.component';
+import { UpdateChefComponent } from './update-chef/update-chef.component';
 
 @NgModule({
   declarations: [
     ChefsComponent,
     NewChefComponent, 
     ChefCardComponent, 
-    ChefDetailComponent
+    ChefDetailComponent, UpdateChefComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +40,8 @@ import { ChefDetailComponent } from './chef-detail/chef-detail.component';
     MatInputModule,
     MatSelectModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatIconModule
   ]
 })
 export class ChefsModule { }

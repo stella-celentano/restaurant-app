@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>Atualizar chef: {{this.Chef['name']}}</h2>
+<form [formGroup]="chefFormGroup" class="form">
+    <mat-form-field class="form-element">
+        <mat-label>Cidade</mat-label>
+        <input matInput formControlName="city" placeholder="Cidade" required>
+    </mat-form-field>
+    <mat-form-field class="form-element">
+        <mat-label>Escola de Gastronomia</mat-label>
+        <input matInput formControlName="education" placeholder="Escola de Gastronomia" required>
+    </mat-form-field>
+    <mat-form-field class="form-element">
+        <mat-label>Imagem</mat-label>
+        <input matInput formControlName="imagem" placeholder="Link da imagem">
+    </mat-form-field>
+    <mat-form-field class="form-element">
+        <mat-label>Selecione um restaurante</mat-label>
+        <mat-select formControlName="restaurant" [compareWith]="compareRestaurant" required>
+            <mat-option *ngFor="let restaurant of restaurants" [value]="restaurant">{{restaurant.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div class="form-element">
+        <button class="button" color="primary" mat-button [disabled]="chefFormGroup.invalid"
+            (click)="updateChef()">Atualizar Chef</button>
+    </div>
+    <div class="form-element">
+        <button mat-button class="button" color="warn" (click)="closeDialog()">Fechar</button>
+    </div>
+</form>

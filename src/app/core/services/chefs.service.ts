@@ -28,4 +28,12 @@ export class ChefsService {
     myParams = myParams.append('nome', chefName)
     return this.http.get<any>(`${API_URL}/chef/validarNomechef`, { params: myParams })
   }
+
+  updateChefById(chefID: String, body: Chef): Observable<HttpResponse<Chef>> {
+    return this.http.put<Chef>(`${API_URL}/chef/updateChef/${chefID}`, body, { observe: 'response' })
+  }
+
+  deleteChefById(chefID: String): Observable<HttpResponse<Chef>> {
+    return this.http.delete<Chef>(`${API_URL}/chef/deleteChef/${chefID}`, { observe: 'response' })
+  }
 }

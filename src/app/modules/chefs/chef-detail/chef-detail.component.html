@@ -13,6 +13,17 @@
                 <div class="restaurantName">{{Chef.restaurant.name}}</div>
             </mat-card-header>
         </mat-card>
+        <br>
+        <br>
+        <div class="row">
+            <button mat-mini-fab color="primary" aria-label="Atualizar Filme" (click)="openUpdateChefModal()">
+                <mat-icon>edit</mat-icon>
+            </button>
+            &nbsp;
+            <button mat-mini-fab color="warn" aria-label="Apagar Filme" (click)="openConfirmModal()">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
     </div>
     <div fxFlex="50%" fxFlex.gt-sm="75%">
         <mat-card class="mat-elevation-z0">
