@@ -10,13 +10,15 @@ import { MatStepperModule } from "@angular/material/stepper"
 import { MatFormFieldModule } from "@angular/material/form-field"
 import { MatInputModule } from "@angular/material/input"
 import { MatSelectModule } from "@angular/material/select"
+import { MatIconModule } from "@angular/material/icon";
 
 import { RestaurantsRoutingModule } from './restaurants-routing.module';
 import { RestaurantsComponent } from './restaurants.component';
 import { RestaurantCardComponent } from './restaurant-card/restaurant-card.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
 import { ComponentsModule } from "./../../components/components.module";
-import { NewRestaurantComponent } from './new-restaurant/new-restaurant.component'
+import { NewRestaurantComponent } from './new-restaurant/new-restaurant.component';
+import { UpdateRestaurantComponent } from './update-restaurant/update-restaurant.component'
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { NewRestaurantComponent } from './new-restaurant/new-restaurant.componen
     RestaurantsComponent,
     NewRestaurantComponent,
     RestaurantDetailComponent,
-    RestaurantCardComponent
+    RestaurantCardComponent,
+    UpdateRestaurantComponent
   ],
   imports: [
     CommonModule,
@@ -39,6 +42,7 @@ import { NewRestaurantComponent } from './new-restaurant/new-restaurant.componen
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatIconModule
   ]
 })
 export class RestaurantsModule { }

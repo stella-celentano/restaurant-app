@@ -13,11 +13,23 @@
                 <div class="chefName">{{chefs.name}}</div>
             </mat-card-header>
         </mat-card>
+        <br>
+        <br>
+        <div class="row">
+            <button mat-mini-fab color="primary" aria-label="Atualizar Filme" (click)="openUpdateChefModal()">
+                <mat-icon>edit</mat-icon>
+            </button>
+            &nbsp;
+            <button mat-mini-fab color="warn" aria-label="Apagar Filme" (click)="openConfirmModal()">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
     </div>
     <div fxFlex="50%" fxFlex.gt-sm="75%">
         <mat-card class="mat-elevation-z0">
             <div class="row">
                 <span class="mat-display-1 uppercase-text">{{Restaurant.name}}</span>
+                <br>
                 <br>
                 <span class="restaurantInfo">{{Restaurant.contact}}</span>
                 <br>
@@ -26,6 +38,7 @@
                 <br>
                 <br>
                 <span class="restaurantInfo">{{Restaurant.address}}</span>
+                <br>
                 <br>
                 <span *ngIf="Restaurant.typeFood" class="restaurantInfo">{{Restaurant.typeFood}}</span>
             </div>

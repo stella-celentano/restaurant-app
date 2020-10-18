@@ -28,4 +28,12 @@ export class RestaurantsService {
     myParams = myParams.append('nome', restaurantName)
     return this.http.get<any>(`${API_URL}/restaurant/validarNomeRestaurant`, { params: myParams })
   }
+
+  updateRestaurantById(restaurantID: String, body: Restaurant): Observable<HttpResponse<Restaurant>> {
+    return this.http.put<Restaurant>(`${API_URL}/restaurant/updateRestaurant/${restaurantID}`, body, { observe: 'response' })
+  }
+
+  deleteRestaurantById(restaurantID: String): Observable<HttpResponse<Restaurant>> {
+    return this.http.delete<Restaurant>(`${API_URL}/restaurant/deleteRestaurant/${restaurantID}`, { observe: 'response' })
+  }
 }

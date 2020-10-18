@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>Atualizar restaurante: {{this.Restaurant['name']}}</h2>
+<form [formGroup]="restaurantFormGroup" class="form">
+    <ng-template matStepLabel>Restaurante</ng-template>
+    <mat-form-field class="form-element">
+        <mat-label>Contato</mat-label>
+        <input matInput formControlName="contact" placeholder="Contato" required>
+    </mat-form-field>
+    <mat-form-field class="form-element">
+        <mat-label>Cidade</mat-label>
+        <input matInput formControlName="city" placeholder="Cidade" required>
+    </mat-form-field>
+    <mat-form-field class="form-element">
+        <mat-label>Endereço</mat-label>
+        <input matInput formControlName="address" placeholder="Endereço" required>
+    </mat-form-field>
+    <mat-form-field class="form-element">
+        <mat-label>Tipo de Comida</mat-label>
+        <input matInput formControlName="typeFood" placeholder="Tipo de Comida">
+    </mat-form-field>
+    <mat-form-field class="form-element">
+        <mat-label>Imagem</mat-label>
+        <input matInput formControlName="imagem" placeholder="Link da Imagem">
+    </mat-form-field>
+    <div class="form-element">
+        <button class="button" color="primary" mat-button [disabled]="restaurantFormGroup.invalid"
+            (click)="updateRestaurant()">Atualizar Restaurante</button>
+    </div>
+</form>
+<div class="form-element">
+    <button mat-button class="button" color="warn" (click)="closeDialog()">Fechar</button>
+</div>

@@ -74,9 +74,9 @@
                 <button class="button" color="primary" mat-button [disabled]="chefFormGroup.invalid"
                     (click)="createNewChef()">Adicionar Chef</button>
             </div>
+            <div class="form-element">
+                <button mat-button class="button" color="warn" (click)="closeDialog()">Fechar</button>
+            </div>
         </form>
     </mat-step>
 </mat-horizontal-stepper>
-<div class="form-element">
-    <button mat-button class="button" color="warn" (click)="closeDialog()">Fechar</button>
-</div>
